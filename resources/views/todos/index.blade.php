@@ -30,18 +30,10 @@
                                             <tr>
                                                 <td>{{ $todo->title }}</td>
                                                 <td>{{ $todo->description }}</td>
-                                                <td>
-                                                    @if ($todo->status == 'Todo')
-                                                        <span class="badge badge-danger">{{ $todo->status }}</span>
-                                                    @elseif ($todo->status == 'In Progress')
-                                                        <span class="badge badge-warning">{{ $todo->status }}</span>
-                                                    @elseif ($todo->status == 'Complete')
-                                                        <span class="badge badge-success">{{ $todo->status }}</span>
-                                                    @endif
-                                                </td>
+                                                <td>{{ $todo->status }}</td>
                                                 <td>
                                                     <a href="{{ route('todos.edit', $todo->id) }}"
-                                                        class="btn btn-primary"><i class="bi bi-pencil"></i></a>
+                                                        class="btn \ btn-primary"><i class="bi bi-pencil"></i></a>
                                                     <form action="{{ route('todos.destroy', $todo->id) }}" method="POST"
                                                         class="d-inline">
                                                         @csrf
